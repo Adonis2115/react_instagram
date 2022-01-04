@@ -1,6 +1,9 @@
+import NewPostForm from "../components/photoPost/NewPostForm";
+
 function NewPost() {
-    return <div>New Post</div>;
-  }
-  
-  export default NewPost;
-  
+  return (
+    <NewPostForm />
+  );
+}
+
+export default NewPost;
