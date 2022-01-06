@@ -1,7 +1,7 @@
 function AllPost() {
   return (
-    <header className={classes.header}>
-      <div to="/" className={classes.logo}>
+    <header>
+      <div to="/">
         Instagram
       </div>
     </header>
