@@ -1,5 +1,5 @@
-import PostItem from './PostItem';
-import classes from './PostList.module.css';
+import PostItem from "./PostItem";
+import classes from "./PostList.module.css";
 
 function PostList(props) {
   return (
@@ -8,8 +8,8 @@ function PostList(props) {
         <PostItem
           key={post.id}
           id={post.id}
-          image={post.image}
           name={post.name}
+          image={post.image}
           description={post.description}
         />
       ))}
