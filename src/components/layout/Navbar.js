@@ -4,14 +4,16 @@ import { Link } from "react-router-dom";
 function Navigation() {
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>Instagram</div>
+      <Link to="/" className={classes.logo}>
+        Instagram
+      </Link>
       <nav>
         <ul>
           <li>
             <input type="text" placeholder="Search..." />
           </li>
           <li>
-            <Link to="/">New Post</Link>
+            <Link to="/newPost">New Post</Link>
           </li>
           <li>
             <Link to="/profile">Profile</Link>

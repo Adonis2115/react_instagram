@@ -1,9 +1,9 @@
-// import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import NewPostForm from "../components/photoPost/NewPostForm";
 
 function NewPost() {
-  // const history = useHistory();
+  const navigate = useNavigate();
 
   function addPostHandler(postData) {
     fetch("https://instagram-59b98-default-rtdb.firebaseio.com/posts.json", {
@@ -13,13 +13,13 @@ function NewPost() {
         "Content-Type": "application/json",
       },
     }).then(() => {
-      // history.replace("/");
+      navigate("/");
     });
   }
   return (
     <section>
       <h1>Add New Post</h1>
-      <NewPostForm onAddPost={addPostHandler} />
+      <NewPostForm onNewPost={addPostHandler} />
     </section>
   );
 }
