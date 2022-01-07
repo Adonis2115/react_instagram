@@ -4,15 +4,14 @@ import NewPost from "./pages/NewPost";
 import Profile from "./pages/Profile";
 import Setting from "./pages/Setting";
 import Navigation from "./components/layout/Navbar";
-import PostItem from "./components/photoPost/PostItem";
-// import AllPost from "./pages/AllPost";
+import AllPost from "./pages/AllPost";
 
 function App() {
   return (
     <div>
       <Navigation />
       <Routes>
-        <Route path="/" element={<PostItem />} />
+        <Route path="/" element={<AllPost />} />
         <Route path="/newPost" element={<NewPost />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/setting" element={<Setting />} />
