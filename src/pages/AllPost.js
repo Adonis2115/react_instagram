@@ -1,11 +1,11 @@
-function AllPost() {
-  return (
-    <header>
-      <div to="/">
-        Instagram
-      </div>
-    </header>
-  );
-}
+// // import PostItem from "../components/photoPost/PostItem";
 
-export default AllPost;
+// function AllPost() {
+//   return (
+//     <header>
+//       <div to="/">Instagram</div>
+//     </header>
+//   );
+// }
+
+// export default AllPost;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
-import PostList from "../photoPost/PostList";
+// import PostList from "../photoPost/PostList";
+import AllPost from "../../pages/AllPost";
 
 function AllPostItem() {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,10 +40,10 @@ function AllPostItem() {
   }
 
   return (
-    <section>
-      <h1>Instagram</h1>
-      <PostList posts={loadedPosts} />
-    </section>
+    <header>
+      <div to="/">Instagram</div>
+      <AllPost posts={loadedPosts} />
+    </header>
   );
 }
 

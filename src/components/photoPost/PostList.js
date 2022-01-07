@@ -4,7 +4,7 @@ import classes from "./PostList.module.css";
 function PostList(props) {
   return (
     <ul className={classes.list}>
-      {props.meetups.map((post) => (
+      {props.posts.map((post) => (
         <PostItem
           key={post.id}
           id={post.id}
