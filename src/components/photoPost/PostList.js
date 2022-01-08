@@ -1,11 +1,11 @@
 import classes from "./PostList.module.css";
-import AllPost from "../../pages/AllPost";
+import PostItem from "./PostItem";
 
 function PostList(props) {
   return (
     <ul className={classes.list}>
       {props.posts.map((post) => (
-        <AllPost
+        <PostItem
           key={post.id}
           id={post.id}
           name={post.name}
