@@ -1,4 +1,3 @@
-// import Layout from "./components/layout/Layout";
 import { Routes, Route } from "react-router-dom";
 import NewPost from "./pages/NewPost";
 import Profile from "./pages/Profile";

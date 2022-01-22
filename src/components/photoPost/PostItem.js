@@ -1,25 +1,25 @@
-// import { useContext } from "react";
-
+import { useContext } from "react";
 import classes from "./PostItem.module.css";
+import LikedContext from "../../store/liked-context";
+// import { button } from "@mui/icons-material/Favorite";
 
 function PostItem(props) {
-  //   const favoritesCtx = useContext(FavoritesContext);
+  const likedCtx = useContext(LikedContext);
 
-  //   const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
+  const itemIsLike = likedCtx.itemIsLike(props.id);
 
-  //   function toggleFavoriteStatusHandler() {
-  //     if (itemIsFavorite) {
-  //       favoritesCtx.removeFavorite(props.id);
-  //     } else {
-  //       favoritesCtx.addFavorite({
-  //         id: props.id,
-  //         title: props.title,
-  //         description: props.description,
-  //         image: props.image,
-  //         address: props.address,
-  //       });
-  //     }
-  //   }
+  function toggleLikeStatusHandler() {
+    if (itemIsLike) {
+      likedCtx.unLike(props.id);
+    } else {
+      likedCtx.like({
+        id: props.id,
+        name: props.name,
+        image: props.image,
+        description: props.description,
+      });
+    }
+  }
 
   return (
     <li className={classes.item}>
@@ -33,9 +33,10 @@ function PostItem(props) {
         <p>{props.description}</p>
       </div>
       <div className={classes.actions}>
-        {/* <button onClick={toggleFavoriteStatusHandler}>
-          {itemIsFavorite ? "Remove from Favorites" : "To Favorites"}
-        </button> */}
+        <button onClick={toggleLikeStatusHandler}>
+          {itemIsLike ? "Unlike" : " Like"}
+          {likedCtx.totalLiked}
+        </button>
       </div>
       {/* </Card> */}
     </li>

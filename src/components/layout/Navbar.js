@@ -1,11 +1,16 @@
+// import { useContext } from "react";
 import classes from "./Navbar.module.css";
 import { Link } from "react-router-dom";
+// import LikedContext from "../../store/liked-context";
 
 function Navigation() {
+  // const likedCtx = useContext(LikedContext);
+
   return (
     <header className={classes.header}>
       <Link to="/" className={classes.logo}>
         Instagram
+        {/* {likedCtx.totalLiked} */}
       </Link>
       <nav>
         <ul>
