@@ -58,19 +58,19 @@ router.patch("/users/me", auth, async (req, res) => {
   }
 });
 
-// // LogOut User
-// router.post("/users/logout", auth, async (req, res) => {
-//   try {
-//     req.user.tokens = req.user.tokens.filter((token) => {
-//       return token.token !== req.token;
-//     });
-//     await req.user.save();
+// LogOut User
+router.post("/users/logout", auth, async (req, res) => {
+  try {
+    req.user.tokens = req.user.tokens.filter((token) => {
+      return token.token !== req.token;
+    });
+    await req.user.save();
 
-//     res.send("Logged Out");
-//   } catch (e) {
-//     res.status(500).send();
-//   }
-// });
+    res.send("Logged Out");
+  } catch (e) {
+    res.status(500).send(e);
+  }
+});
 
 // // Forgot Password
 // router.patch("/users/forgot", async (req, res) => {
