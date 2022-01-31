@@ -27,7 +27,7 @@ function Navigation() {
             <Link to="/setting">Setting</Link>
           </li>
           <li>
-            <Link to="/logout">Logout</Link>
+            <Link to="/logIn">Log In</Link>
           </li>
         </ul>
       </nav>

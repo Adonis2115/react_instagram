@@ -33,7 +33,7 @@ function PostItem(props) {
         <p>{props.description}</p>
       </div>
       <div className={classes.actions}>
-        <button onClick={toggleLikeStatusHandler}>
+        <button datatype="like" onClick={toggleLikeStatusHandler}>
           {itemIsLike ? "Unlike" : " Like"}
           {likedCtx.totalLiked}
         </button>

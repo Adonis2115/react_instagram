@@ -47,13 +47,3 @@ function AllPost() {
 }
 
 export default AllPost;
-
-// function AllPost() {
-//   return (
-//     <header>
-//       <div to="/">Instagram</div>
-//     </header>
-//   );
-// }
-
-// export default AllPost;
