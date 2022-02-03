@@ -1,6 +1,7 @@
 import classes from "./LogInForm.module.css";
 
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 function LogIn(props) {
   const emailInputRef = useRef();
@@ -33,6 +34,11 @@ function LogIn(props) {
       <div className={classes.actions}>
         <button>Log-In</button>
       </div>
+      <Link to="/signUp">
+        <div className={classes.actions}>
+          <button>Sign-Up</button>
+        </div>
+      </Link>
     </form>
   );
 }
