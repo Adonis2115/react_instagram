@@ -1,3 +1,5 @@
+import classes from "./SignUpForm.module.css";
+
 import { useRef } from "react";
 
 function SignUp(props) {
