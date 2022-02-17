@@ -14,13 +14,13 @@ function SignUp(props) {
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
 
-    const logData = {
+    const userData = {
       name: enteredName,
       email: enteredEmail,
       password: enteredPassword,
     };
 
-    props.onNewLog(logData);
+    props.onNewUser(userData);
   }
 
   return (
