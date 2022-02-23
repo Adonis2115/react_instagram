@@ -6,7 +6,7 @@ function SignUp() {
   const navigate = useNavigate();
 
   function addSignUpHandler(userData) {
-    fetch("localhost:5000/users", {
+    fetch("http://localhost:5000/users", {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
