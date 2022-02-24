@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const db = require("./db/mongoose");
 const userRouter = require("./routers/user");
+const postRouter = require("./routers/post");
 const path = require("path");
 const http = require("http");
 
@@ -24,6 +25,7 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(userRouter);
+app.use(postRouter);
 
 app.listen(5000, () => console.log("Server Up and Running!"));
 
