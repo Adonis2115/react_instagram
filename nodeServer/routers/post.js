@@ -35,65 +35,36 @@ router.get("/post", auth, async (req, res) => {
   }
 });
 
-// router.get("/contact/:id", auth, async (req, res) => {
-//   const _id = req.params.id;
+// read post by id
+router.get("/post/:id", auth, async (req, res) => {
+  const _id = req.params.id;
 
-//   try {
-//     const contact = await Contact.findOne({ _id, owner: req.user._id });
+  try {
+    const post = await Post.findOne({ _id, owner: req.user._id });
 
-//     if (!contact) {
-//       return res.status(404).send();
-//     } else res.send(contact);
-//   } catch (e) {
-//     console.log("their is no contact of this id");
-//     res.status(500).send(e);
-//   }
-// });
+    if (!post) {
+      return res.status(404).send();
+    } else res.send(post);
+  } catch (e) {
+    console.log("their is no post of this id");
+    res.status(500).send(e);
+  }
+});
 
-// router.patch("/contact/:id", auth, async (req, res) => {
-//   const updates = Object.keys(req.body);
-//   const allowedUpdates = ["name", "phone", "email"];
-//   const isValidOperation = updates.every((update) =>
-//     allowedUpdates.includes(update)
-//   );
-
-//   if (!isValidOperation) {
-//     return res.status(400).send({ error: "Can Not Update!" });
-//   }
-//   try {
-//     const contact = await Contact.findOne({
-//       _id: req.params.id,
-//       owner: req.params._id,
-//     });
-//     // if(_id == req.params.id) {
-//     //     updates.forEach((update) => contact[update] = req.body[update])
-//     //     await contact.save()
-//     // }
-//     // else if( _id != req.params.id ) {
-//     //     return res.status(400).send(e)
-//     // }
-//     if (!contact) {
-//       return res.status(404).send(e);
-//     }
-//     res.send(contact);
-//   } catch (e) {
-//     res.status(400).send(e);
-//   }
-// });
-
-// router.delete("/contact/:id/delete", auth, async (req, res) => {
-//   try {
-//     const contact = await Contact.findOneAndDelete({
-//       _id: req.params.id,
-//       owner: req.user._id,
-//     });
-//     if (!contact) {
-//       return res.status(404).send();
-//     }
-//     res.send(contact);
-//   } catch (e) {
-//     res.status(500).send();
-//   }
-// });
+// delete post
+router.delete("/post/:id/delete", auth, async (req, res) => {
+  try {
+    const post = await Post.findOneAndDelete({
+      _id: req.params.id,
+      owner: req.user._id,
+    });
+    if (!post) {
+      return res.status(404).send();
+    }
+    res.send(post);
+  } catch (e) {
+    res.status(500).send();
+  }
+});
 
 module.exports = router;
