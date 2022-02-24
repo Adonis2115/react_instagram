@@ -8,7 +8,9 @@ function AllPost() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://instagram-59b98-default-rtdb.firebaseio.com/posts.json")
+    fetch(
+      "https://react-instagram-d29f8-default-rtdb.firebaseio.com/posts.json"
+    )
       .then((response) => {
         console.log(response);
         return response.json();

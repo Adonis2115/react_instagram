@@ -1,19 +1,18 @@
 import { useNavigate } from "react-router-dom";
-// import nodeServer from "../../nodeServer/index";
 import SignUpForm from "../components/userLog/SignUpForm";
 
 function SignUp() {
   const navigate = useNavigate();
 
   function addSignUpHandler(userData) {
-    fetch("localhost:5000/users", {
+    fetch("http://localhost:5000/users", {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
         "Content-Type": "application/json",
       },
     }).then(() => {
-      navigate("/");
+      navigate("/logIn");
     });
   }
   return (
