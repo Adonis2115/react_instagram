@@ -12,11 +12,13 @@ function LogIn() {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then(() => {
-      navigate("/");
-    });
+    })
+      .then((response) => response.json())
+      .then((data) =>
+        localStorage.setItem("token", JSON.stringify(data.token))
+      );
+    navigate("/");
   }
-
   return (
     <section className={classes.form}>
       <h1>Sign In</h1>
