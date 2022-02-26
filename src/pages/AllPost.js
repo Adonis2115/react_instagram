@@ -8,9 +8,11 @@ function AllPost() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(
-      "https://react-instagram-d29f8-default-rtdb.firebaseio.com/posts.json"
-    )
+    fetch("http://localhost:5000/post", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
       .then((response) => {
         console.log(response);
         return response.json();

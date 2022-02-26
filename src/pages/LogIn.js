@@ -14,9 +14,7 @@ function LogIn() {
       },
     })
       .then((response) => response.json())
-      .then((data) =>
-        localStorage.setItem("token", JSON.stringify(data.token))
-      );
+      .then((data) => localStorage.setItem("token", data.token));
     navigate("/");
   }
   return (
