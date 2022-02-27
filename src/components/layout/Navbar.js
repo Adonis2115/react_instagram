@@ -29,6 +29,9 @@ function Navigation() {
           <li>
             <Link to="/logIn">Log In</Link>
           </li>
+          <li>
+            <Link to="/logOut">Log Out</Link>
+          </li>
         </ul>
       </nav>
     </header>

@@ -6,6 +6,7 @@ import Navigation from "./components/layout/Navbar";
 import AllPost from "./pages/AllPost";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
+import LogOut from "./pages/LogOut";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/setting" element={<Setting />} />
         <Route path="/logIn" element={<LogIn />} />
         <Route path="/signUp" element={<SignUp />} />
+        <Route path="/logOut" element={<LogOut />} />
       </Routes>
     </div>
   );
