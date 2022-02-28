@@ -14,8 +14,10 @@ function LogIn() {
       },
     })
       .then((response) => response.json())
-      .then((data) => localStorage.setItem("token", data.token));
-    navigate("/");
+      .then((data) => localStorage.setItem("token", data.token))
+      .then(() => {
+        navigate("/");
+      });
   }
   return (
     <section className={classes.form}>
