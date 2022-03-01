@@ -27,7 +27,7 @@ router.post("/post", auth, async (req, res) => {
 // read post
 router.get("/post", auth, async (req, res) => {
   try {
-    const post = await Post.find({ owner: req.user._id });
+    const post = await Post.find({});
     res.send(post);
   } catch (e) {
     console.log("Post Not Found");
@@ -46,7 +46,7 @@ router.get("/post/:id", auth, async (req, res) => {
       return res.status(404).send();
     } else res.send(post);
   } catch (e) {
-    console.log("their is no post of this id");
+    console.log("there is no post of this id");
     res.status(500).send(e);
   }
 });
