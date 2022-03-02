@@ -16,6 +16,9 @@ const postSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  like: {
+    type: String,
+  },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
