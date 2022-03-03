@@ -71,8 +71,16 @@ router.delete("/post/:id/delete", auth, async (req, res) => {
 router.post("/post/like", async (req, res) => {
   const id = req.body._id;
   const user = req.body.user;
+  var like = req.body.like;
+
   try {
-    var post = await Post.findOneAndUpdate(id, { $push: { like: user } });
+    if (like == true) {
+      console.log(like);
+      var post = await Post.findOneAndUpdate(id, { $push: { like: user } });
+    } else if (like == false) {
+      console.log(like);
+      var post = await Post.findOneAndUpdate(id, { $pull: { like: user } });
+    }
     res.status(200).send(post);
   } catch (e) {
     console.log(e);
